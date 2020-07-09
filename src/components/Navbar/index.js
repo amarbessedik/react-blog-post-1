@@ -1,16 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
+import {NavLink} from 'react-router-dom'
 import './style.css';
+import Logo from "../../assets/icons/search_icon.png";
 
 const Navbar = (props) => {
+    const [search, setSearch] = useState(false);
+    //search submit handler
+    const handleSubmit = (e) =>{
+     e.preventDefault();
+     alert('SEARCHED');
+    }
+
+    const openSearch = () =>{
+        setSearch(true);
+    }
+
+    const searchClass = !search ? 'search-input': 'search-input active';
+
     return (
-        <div className="navbar">
-          <ul className="navbar-menu">
-              <li><a href="link">Home</a></li>
-              <li><a href="link">Posts</a></li>
-              <li><a href="link">About</a></li>
-              <li><a href="link">Contact</a></li>
-          </ul>
+      <div className="navbar">
+        <ul className="navbar-menu">
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/posts">Posts</NavLink>
+          </li>
+          <li>
+            <NavLink to="/about">About</NavLink>
+          </li>
+          <li>
+            <NavLink to="contact">Contact</NavLink>
+          </li>
+        </ul>
+        <div className="search-bar">
+          <form className="form" onSubmit={handleSubmit}>
+            <input className={searchClass} type="text" placeholder="Search ..." />
+            <img 
+              onMouseDown={openSearch}
+              className="search-icon"
+              src={Logo}
+              alt="search_icon"
+            />
+          </form>
         </div>
+      </div>
     );
 }
 

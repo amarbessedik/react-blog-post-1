@@ -1,13 +1,14 @@
 import React from 'react';
-import './style.css'
+import { NavLink } from 'react-router-dom';
+import './style.css';
 
 const Header = () => {
     return (
         <header className="header">
             <nav className="header-menu">
-                <a href="home">Home</a>
-                <a href="about">About</a>
-                <a href="contact">Contact Us</a>
+                <NavLink to="/">Home</NavLink>
+                <NavLink to="/about">About</NavLink>
+                <NavLink to="/contact">Contact</NavLink>
             </nav>
             <div>
                 social media links
