@@ -1,12 +1,16 @@
 import React from 'react';
 import './style.css';
+import BlogPost from '../../components/BlogPost';
+import Sidebar from '../../components/Sidebar';
+// import Card from '../../components/UI/Card';
 
-const Post = () => {
+const Post = (props) => {
     return (
-        <div>
-            <h1>Posts page</h1>
-        </div>
+        <section className='container'>
+            <BlogPost />
+            <Sidebar />
+        </section>
     );
 }
 
-export default Post;
+export default Post; 
