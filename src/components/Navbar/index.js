@@ -11,8 +11,8 @@ const Navbar = (props) => {
      alert('SEARCHED');
     }
 
-    const openSearch = () =>{
-        setSearch(true);
+    const openSearch = (e) =>{
+        search ? setSearch(false) : setSearch(true);
     }
 
     const searchClass = !search ? 'search-input': 'search-input active';
