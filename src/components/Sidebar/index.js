@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import Card from "../UI/Card";
-import aboutUsImage from "../../images/profile-picture.jpeg";
-import recentPostsData from './RecentPostsData'
-import { Link } from "react-router-dom";
+import aboutUsImage from "../../images/img6.jpeg";
+import blogData from "../../data/blog";
+import { Link, NavLink } from "react-router-dom";
 
 const Sidebar = (props) => {
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    const posts = blogData.data;
+    setPosts(posts);
+  }, []);
   return (
     <div className="sidebar-container">
       <Link to="/about" className="link">
@@ -14,7 +19,7 @@ const Sidebar = (props) => {
           style={{ marginBottom: "10px", border: "1px solid rgba(0,0,0,.2)" }}
         >
           <div className="card-header">
-            <span>About Us</span>
+            <span>Profile</span>
           </div>
           <div className="profile-image-container">
             <img src={aboutUsImage} alt="aboutUsImage" />
@@ -38,19 +43,19 @@ const Sidebar = (props) => {
         style={{ marginBottom: "10px", border: "1px solid rgba(0,0,0,.2)" }}
       >
         <div className="card-header">
-          <span>Recent Posts</span>
+          <span>Most Recent Posts</span>
         </div>
         <div className="posts">
-          {recentPostsData.map((post, index) => {
+          {posts.map((post, index) => {
             return (
-              <div className="recent-posts" key={index}>
-              <Link to='/posts'>
-                  <h3>{post.title}</h3>
-                  <p>{post.content}</p>
-              </Link>
-                  <span>{post.date}</span>
-            <span>Pulished {post.date}</span>
+              <NavLink key={index} to={`/post/${post.id}`}>
+                <div className="recent-posts">
+                  <h3>{post.blogTitle}</h3>
+                  <img src={post.blogImage} alt="recentImagePost" />
+            <p>{post.blogText.substring(0,100)} ...</p>
+                  <span>{post.postedOn}</span>
                 </div>
+              </NavLink>
             );
           })}
         </div>

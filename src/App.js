@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Home from "./containers/Home";
 import Contact from "./containers/Contact";
-import Posts from "./containers/Posts";
+import Post from "./containers/Post";
 import About from "./containers/About";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -16,7 +16,7 @@ function App() {
         <Hero />
         <Route path="/" exact component={Home} />
         <Route path="/contact" component={Contact} />
-        <Route path='/posts' component={Posts}/>
+        <Route path='/post/:postId' component={Post}/>
         <Route path='/about' component={About}/>
         <Route /> 
       </div>

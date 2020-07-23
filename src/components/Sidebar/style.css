@@ -13,9 +13,10 @@
 .profile-image-container {
   width: 100%;
   text-align: center;
+  box-sizing: border-box;
 }
 .profile-image-container img {
-  border-radius: 7px;
+  border-radius: 5px;
   width: 90%;
   height: 80%;
   margin: 10px 0;
@@ -37,6 +38,7 @@
 .recent-posts{
     border-bottom: 1px solid #ccc;
     margin-left: 10px;
+    text-align: center;
 }
 .recent-posts h3{
     font-weight: 400;
@@ -54,4 +56,9 @@
     font-size: 14px;
     font-weight: 300;
     color: #6c6c6c;
+}
+.recent-posts img{
+  width: 75%;
+  height: auto;
+  border-radius: 5px;
 }
