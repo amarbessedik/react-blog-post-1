@@ -3,6 +3,7 @@ import "./style.css";
 import Card from "../../components/UI/Card";
 import blog from "../../data/blog";
 import Sidebar from "../../components/Sidebar";
+import { Link } from "react-router-dom";
 
 const Home = (props) => {
   const gallaryHeight = 450;
@@ -61,11 +62,11 @@ const Home = (props) => {
         }}
       >
         <div style={{ width: "70%" }}>
-          <Card style={{ marginBottom: "20px" }}>
+          {/* <Card style={{ marginBottom: "20px" }}>
             <div className="post-image-wrapper">
               <img src={mainImage} alt="postImage" />
             </div>
-            <div style={{ textAlign: "center" }}>
+            <div className='home-post' style={{ textAlign: "center" }}>
               <span>Featured</span>
               <h2>{blog.data[0].blogTitle}</h2>
               <span style={{ fontWeight: "300", fontSize: "13px" }}>
@@ -74,9 +75,32 @@ const Home = (props) => {
               <p style={{ textAlign: "left", fontWeight: "300" }}>
                 {blog.data[0].blogText.substring(0, 240) + "..."}
               </p>
+              <button>Read More</button>
             </div>
-          </Card>
-          <Card style={{ marginBottom: "20px" }}>post2</Card>
+          </Card> */}
+          {
+            blogData.map(post =>{
+              return (
+                <Card style={{ marginBottom: "20px" }}>
+                  <div className="post-image-wrapper">
+                    <img src={post.blogImage} alt="postImage" />
+                  </div>
+                  <div className="home-post" style={{ textAlign: "center" }}>
+                    <span>Featured</span>
+                    <h2>{post.blogTitle}</h2>
+                    <span style={{ fontWeight: "300", fontSize: "13px" }}>
+                      Posted on July 27, 2020 by Sorra Blogging Tips
+                    </span>
+                    <p style={{ textAlign: "left", fontWeight: "300" }}>
+                      {post.blogText.substring(0, 240) + "..."}
+                    </p>
+                    <Link className='link' to={`/post/${post.id}`}>Read More</Link>
+                  </div>
+                </Card>
+              );
+            })
+          }
+          
         </div>
         <Sidebar />
       </section>

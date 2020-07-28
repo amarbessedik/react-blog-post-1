@@ -51,8 +51,6 @@ const Sidebar = (props) => {
               <NavLink key={post.id} to={`/post/${post.id}`} className='navlink'>
                 <div className="recent-posts">
                   <h3>{post.blogTitle}</h3>
-                  <img src={post.blogImage} alt="recentImagePost" />
-            <p>{post.blogText.substring(0,100)} ...</p>
                   <span>{post.postedOn}</span>
                 </div>
               </NavLink>

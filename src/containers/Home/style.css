@@ -32,3 +32,18 @@
    max-height: 100%;
    object-fit: cover;
 }
+.link{
+    color: #5f9ea0;
+    border: 1px solid #5f9ea0;
+    padding: 2px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+.link:hover{
+    background: #5f9ea0;
+    color: white;
+    transition: ease-in .3s;
+}
+
