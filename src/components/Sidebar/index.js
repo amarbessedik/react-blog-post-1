@@ -15,7 +15,7 @@ const Sidebar = (props) => {
     <div className="sidebar-container">
       <Link to="/about" className="link">
         <Card
-          className="card"
+          className="card profile"
           style={{ marginBottom: "10px", border: "1px solid rgba(0,0,0,.2)" }}
         >
           <div className="card-header">
@@ -46,9 +46,9 @@ const Sidebar = (props) => {
           <span>Most Recent Posts</span>
         </div>
         <div className="posts">
-          {posts.map((post, index) => {
+          {posts.map(post => {
             return (
-              <NavLink key={index} to={`/post/${post.id}`}>
+              <NavLink key={post.id} to={`/post/${post.id}`} className='navlink'>
                 <div className="recent-posts">
                   <h3>{post.blogTitle}</h3>
                   <img src={post.blogImage} alt="recentImagePost" />

@@ -16,3 +16,19 @@
 .header-menu a:hover{
     color: #5f9ea0;
 }
+.gallary-post{
+  display: flex;
+  justify-content: space-around;
+}
+.post-header-container{
+    text-align: center;
+}
+.post-image-wrapper{
+    /* height: 450px; */
+    overflow: hidden;
+}
+.post-image-wrapper img{
+   width: 100%;
+   max-height: 100%;
+   object-fit: cover;
+}

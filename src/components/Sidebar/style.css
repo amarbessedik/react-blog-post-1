@@ -37,8 +37,17 @@
 }
 .recent-posts{
     border-bottom: 1px solid #ccc;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.navlink{
+  text-decoration: none;
+}
+.recent-posts:hover, .profile:hover{
+  background: rgba(212, 225, 250, 0.2);
+  box-shadow: 0px 0px 5px #46466377;
 }
 .recent-posts h3{
     font-weight: 400;
@@ -56,9 +65,10 @@
     font-size: 14px;
     font-weight: 300;
     color: #6c6c6c;
+    text-align: left;
 }
 .recent-posts img{
-  width: 75%;
+  width: 100%;
   height: auto;
   border-radius: 5px;
 }
